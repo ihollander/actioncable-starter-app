@@ -14,7 +14,6 @@ const createTweet = tweet => {
 };
 
 const fetchFeed = feedId => {
-  console.log('API_URL', API_URL);
   return fetch(`${API_URL}/feeds/${feedId}`).then(res => res.json());
 };
 
