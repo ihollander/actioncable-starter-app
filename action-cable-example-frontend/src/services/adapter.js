@@ -1,4 +1,4 @@
-const API_URL = `http://localhost:3000/`;
+const API_URL = `http://localhost:3001/`;
 
 const headers = {
   Accepts: 'application/json',
@@ -17,4 +17,12 @@ const fetchFeed = feedId => {
   return fetch(`${API_URL}/feeds/${feedId}`).then(res => res.json());
 };
 
-export default { createTweet, fetchFeed };
+const createLike = tweetId => {
+  return fetch(`${API_URL}/likes`, {
+    method: 'POST',
+    headers,
+    body: JSON.stringify({tweet_id: tweetId})
+  })
+}
+
+export default { createTweet, fetchFeed, createLike };

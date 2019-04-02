@@ -9,7 +9,7 @@ class Feed extends Component {
 
   componentDidMount() {
     adapter.fetchFeed(1).then(res => {
-      this.setState({ displayedTweets: res.tweets });
+      this.setState({ displayedTweets: res});
     });
   }
 

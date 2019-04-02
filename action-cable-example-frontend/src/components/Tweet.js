@@ -1,4 +1,5 @@
 import React from 'react';
+import adapter from '../services/adapter'
 
 const Tweet = ({ tweet }) => {
   return (
@@ -7,8 +8,14 @@ const Tweet = ({ tweet }) => {
         <div className="content">
           <div className="summary">{tweet.content}</div>
           <div className="meta">
-            <a className="like">
-              <i className="like icon" /> 4 Likes
+            <a
+            className="like"
+            onClick={(e) => {
+              e.preventDefault()
+              adapter.createLike(tweet.id)
+            }}
+            >
+              <i className="like icon" /> {tweet.likes} Likes
             </a>
           </div>
         </div>

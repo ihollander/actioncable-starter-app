@@ -4,7 +4,7 @@ class FeedsController < ApplicationController
     feed = Feed.find_by(id: params[:id])
 
     if feed
-      render json: {tweets: feed.tweets}
+      render json: feed.tweets
     else
       render json: {error: 'That feed does not exist'}, status: 404
     end
