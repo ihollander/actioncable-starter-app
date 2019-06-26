@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import ActionCableProvider from "react-actioncable-provider";
+import { ActionCableConsumer } from "react-actioncable-provider";
 import TweetForm from "./TweetForm";
 import TweetList from "./TweetList";
 
@@ -17,7 +17,7 @@ class Feed extends Component {
   addTweet = tweet => {
     this.setState(prevState => {
       return {
-        newTweets: [...prevState.newTweets, tweet]
+        newTweets: [tweet, ...prevState.newTweets]
       };
     });
   };
@@ -25,7 +25,7 @@ class Feed extends Component {
   handleDisplayTweets = () => {
     this.setState(prevState => {
       return {
-        displayedTweets: [...prevState.displayedTweets, ...prevState.newTweets],
+        displayedTweets: [...prevState.newTweets, ...prevState.displayedTweets],
         newTweets: []
       };
     });
@@ -36,8 +36,11 @@ class Feed extends Component {
 
     return (
       <div className="Feed">
-        <ActionCableProvider
+        <ActionCableConsumer
           channel={{ channel: "FeedChannel" }}
+          onReceived={(tweet) => {
+            this.addTweet(tweet)
+          }}
           onInitialized={() => console.log("init")}
           onConnected={() => console.log("connect")}
         />

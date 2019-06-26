@@ -16,7 +16,7 @@ class TweetForm extends Component {
     e.preventDefault();
     adapter.createTweet({ content: this.state.value }).then(tweet => {
       console.log("tweetback", tweet);
-      this.props.addTweet(tweet);
+      // this.props.addTweet(tweet);
     });
 
     this.setState({
