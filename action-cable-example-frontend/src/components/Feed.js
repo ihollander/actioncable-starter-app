@@ -1,15 +1,16 @@
-import React, { Component } from 'react';
-import TweetForm from './TweetForm';
-import TweetList from './TweetList';
+import React, { Component } from "react";
+import ActionCableProvider from "react-actioncable-provider";
+import TweetForm from "./TweetForm";
+import TweetList from "./TweetList";
 
-import adapter from '../services/adapter';
+import adapter from "../services/adapter";
 
 class Feed extends Component {
   state = { displayedTweets: [], newTweets: [] };
 
   componentDidMount() {
     adapter.fetchFeed(1).then(res => {
-      this.setState({ displayedTweets: res});
+      this.setState({ displayedTweets: res });
     });
   }
 
@@ -24,10 +25,7 @@ class Feed extends Component {
   handleDisplayTweets = () => {
     this.setState(prevState => {
       return {
-        displayedTweets: [
-          ...prevState.displayedTweets,
-          ...prevState.newTweets
-        ],
+        displayedTweets: [...prevState.displayedTweets, ...prevState.newTweets],
         newTweets: []
       };
     });
@@ -38,6 +36,11 @@ class Feed extends Component {
 
     return (
       <div className="Feed">
+        <ActionCableProvider
+          channel={{ channel: "FeedChannel" }}
+          onInitialized={() => console.log("init")}
+          onConnected={() => console.log("connect")}
+        />
         <TweetForm addTweet={this.addTweet} />
         <TweetList
           handleDisplayTweets={this.handleDisplayTweets}

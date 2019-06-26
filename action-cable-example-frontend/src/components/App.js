@@ -1,5 +1,5 @@
-import React from 'react';
-import Feed from './Feed';
+import React from "react";
+import Feed from "./Feed";
 
 const App = () => {
   return (
@@ -7,6 +7,6 @@ const App = () => {
       <Feed />
     </div>
   );
-}
+};
 
 export default App;

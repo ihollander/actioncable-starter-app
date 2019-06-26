@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
-import adapter from '../services/adapter';
+import React, { Component } from "react";
+import adapter from "../services/adapter";
 
 class TweetForm extends Component {
   state = {
-    value: ''
+    value: ""
   };
 
   onChange = e => {
@@ -14,13 +14,13 @@ class TweetForm extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    adapter.createTweet({ content: this.state.value })
-      .then(tweet => {
-        this.props.addTweet(tweet)
-      })
+    adapter.createTweet({ content: this.state.value }).then(tweet => {
+      console.log("tweetback", tweet);
+      this.props.addTweet(tweet);
+    });
 
     this.setState({
-      value: ''
+      value: ""
     });
   };
 

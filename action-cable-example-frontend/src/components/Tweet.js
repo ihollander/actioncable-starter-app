@@ -1,5 +1,5 @@
-import React from 'react';
-import adapter from '../services/adapter'
+import React from "react";
+import adapter from "../services/adapter";
 
 const Tweet = ({ tweet }) => {
   return (
@@ -8,15 +8,15 @@ const Tweet = ({ tweet }) => {
         <div className="content">
           <div className="summary">{tweet.content}</div>
           <div className="meta">
-            <a
-            className="like"
-            onClick={(e) => {
-              e.preventDefault()
-              adapter.createLike(tweet.id)
-            }}
+            <button
+              className="like"
+              onClick={e => {
+                e.preventDefault();
+                adapter.createLike(tweet.id);
+              }}
             >
               <i className="like icon" /> {tweet.likes} Likes
-            </a>
+            </button>
           </div>
         </div>
       </div>
