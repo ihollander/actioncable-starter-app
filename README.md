@@ -9,7 +9,7 @@
 ```ruby
 class FeedChannel < ApplicationCable::Channel
   def subscribed
-    stream_from "my_feed"
+    stream_from "feed_channel"
   end
 
   def unsubscribed
@@ -19,13 +19,10 @@ end
 ```
 
 * broadcast
-`ActionCable.server.broadcast('my_feed', @tweet)`
+`ActionCable.server.broadcast('feed_channel', @tweet)`
 
 ### Frontend
 * wrap the app in the provider
-
-* react-actioncable-provider has a bug...
-`npm uninstall --save react-actioncable-provider && npm install --save ihollander/react-actioncable-provider`
 
 ```jsx
 import { ActionCableProvider } from 'react-actioncable-provider';
@@ -37,8 +34,9 @@ import { ActionCableProvider } from 'react-actioncable-provider';
 ```
 
 * in the component
-
 ```jsx
+import { ActionCableConsumer } from 'react-actioncable-provider';
+
 	<ActionCableConsumer
     channel={{ channel: 'FeedChannel' }}
     onReceived={tweet => {
@@ -47,6 +45,9 @@ import { ActionCableProvider } from 'react-actioncable-provider';
     }}
   />
 ```
+
+* react-actioncable-provider has a bug that makes it unsubscribe any time the parent component rerenders, use fixed version until PR is merged:
+`npm uninstall --save react-actioncable-provider && npm install --save ihollander/react-actioncable-provider`
 
 # Resources
 

@@ -9,14 +9,14 @@ class Feed extends Component {
 
   componentDidMount() {
     adapter.fetchFeed(1).then(res => {
-      this.setState({ displayedTweets: res});
+      this.setState({ displayedTweets: res });
     });
   }
 
   addTweet = tweet => {
     this.setState(prevState => {
       return {
-        newTweets: [...prevState.newTweets, tweet]
+        newTweets: [tweet, ...prevState.newTweets]
       };
     });
   };
@@ -25,8 +25,8 @@ class Feed extends Component {
     this.setState(prevState => {
       return {
         displayedTweets: [
-          ...prevState.displayedTweets,
-          ...prevState.newTweets
+          ...prevState.newTweets,
+          ...prevState.displayedTweets
         ],
         newTweets: []
       };
