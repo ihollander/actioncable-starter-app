@@ -1,6 +1,6 @@
 - Why websockets
   - Before sockets, polling
-    - show Google docs network tab
+    - show Twitter
   - Who initiates the request?
     - request/response
     - push vs pull
