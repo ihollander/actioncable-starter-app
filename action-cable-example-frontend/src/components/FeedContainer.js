@@ -4,7 +4,7 @@ import TweetList from './TweetList';
 
 import adapter from '../services/adapter';
 
-class Feed extends Component {
+class FeedContainer extends Component {
   state = { displayedTweets: [], newTweets: [] };
 
   componentDidMount() {
@@ -49,4 +49,4 @@ class Feed extends Component {
   }
 }
 
-export default Feed;
+export default FeedContainer;

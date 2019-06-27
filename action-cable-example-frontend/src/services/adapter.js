@@ -1,4 +1,4 @@
-const API_URL = `http://localhost:3001/`;
+const API_URL = `http://localhost:3001`;
 
 const headers = {
   Accepts: 'application/json',
@@ -21,7 +21,7 @@ const createLike = tweetId => {
   return fetch(`${API_URL}/likes`, {
     method: 'POST',
     headers,
-    body: JSON.stringify({tweet_id: tweetId})
+    body: JSON.stringify({ tweet_id: tweetId })
   })
 }
 

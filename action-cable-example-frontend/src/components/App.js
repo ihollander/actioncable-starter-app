@@ -1,5 +1,5 @@
 import React from 'react';
-import Feed from './Feed';
+import Feed from './FeedContainer';
 
 const App = () => {
   return (

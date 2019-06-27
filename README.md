@@ -65,8 +65,17 @@ import { ActionCableConsumer } from 'react-actioncable-provider';
 
 * [Gist where Alex breaks down how something like the `react-actioncable-provider` library is made](https://gist.github.com/alexgriff/7872ce828c867a1cc5f4e946e61f1998)
 
+## Useful Tools for testing on multiple computers/mobile
+* [ngrok](https://ngrok.com/)
+* [localtunnel](https://github.com/localtunnel/localtunnel)
+
 ## "Hidden Names"
 App: [http://hidden-names.herokuapp.com/](http://hidden-names.herokuapp.com/)
 
 * [Frontend Code](https://github.com/alexgriff/hidden_phrase_frontend)
 * [Backend Code](https://github.com/alexgriff/hidden_phrase_backend)
+
+## Gridbuds
+App: [https://gridbuds.netlify.com/lobby](https://gridbuds.netlify.com/lobby)
+* [Frontend Code](https://github.com/ihollander/react-ipuz)
+* [Backend Code](https://github.com/ihollander/react-ipuz-api)
