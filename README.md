@@ -1,4 +1,10 @@
 # Lecture Notes
+
+## SWBATs
+- Understand the difference between HTTP and WebSocket protocols
+- Use Action Cable in Rails
+- Use `react-actioncable-provider` in React
+
 ### Backend
 * handshake route
 `mount ActionCable.server => '/cable'`
