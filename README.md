@@ -69,13 +69,10 @@ import { ActionCableConsumer } from 'react-actioncable-provider';
 * [ngrok](https://ngrok.com/)
 * [localtunnel](https://github.com/localtunnel/localtunnel)
 
-## "Hidden Names"
-App: [http://hidden-names.herokuapp.com/](http://hidden-names.herokuapp.com/)
+## "Flyak"
+https://github.com/ihollander/flyak-actioncable
 
-* [Frontend Code](https://github.com/alexgriff/hidden_phrase_frontend)
-* [Backend Code](https://github.com/alexgriff/hidden_phrase_backend)
-
-## Gridbuds
+## Gridbuds (I got it to work)
 App: [https://gridbuds.netlify.com/lobby](https://gridbuds.netlify.com/lobby)
 * [Frontend Code](https://github.com/ihollander/react-ipuz)
 * [Backend Code](https://github.com/ihollander/react-ipuz-api)
